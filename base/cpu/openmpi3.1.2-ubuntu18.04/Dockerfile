@@ -79,6 +79,10 @@ RUN mkdir /tmp/openmpi && \
     make install && \
     ldconfig && \
     rm -rf /tmp/openmpi
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    unixodbc-dev \
+    unixodbc \
+    libpq-dev 
 
 # Msodbcsql17 installation
 RUN apt-get update && \
